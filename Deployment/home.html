@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1{
+            text-align: center;
+            background-color: aquamarine;
+        }
+        input{
+            width: 25%;
+            padding: 5px;
+            margin: 5px;
+            align-items: center;
+        }
+        button{
+            margin: 3px;
+        }
+        form{
+            text-align: center;
+        }
+        .center{
+            text-align: center;
+        }
+        div{
+            text-align: center;
+            font-size: 45px;
+        }
+        .green{
+            background-color: greenyellow;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Sentiment Analysis using Text</h1>
+    <form action="\", method="post">
+        <label for="textinput">Insert Review Text Below</label>
+        <br>
+        <input type="text" name="textinput">
+        <br>
+        <button type="submit">Go</button>
+    </form>
+    <br>
+    {% if result%}
+        {% if result == 'Positive'%}
+            <div><mark class="green">{{result}} &#128519;</mark></div>
+            
+        {% endif %}
+        {% if result == 'Negative'%}
+            <div><mark class="red">{{result}} &#129402;</mark></div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
